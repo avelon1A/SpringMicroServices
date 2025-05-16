@@ -1,6 +1,6 @@
 spring:
   application:
-    name: serviceb
+    name: ORDER-SERVICE
 server:
   port: 8082
 
