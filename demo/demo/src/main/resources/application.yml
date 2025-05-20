@@ -4,6 +4,7 @@ server:
 spring:
   application:
     name: SERVICE-A
+
   datasource:
     url: jdbc:mysql://sql12.freesqldatabase.com:3306/sql12779122
     username: sql12779122
@@ -26,4 +27,3 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
-
