@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: USER-SERVICE
+    name: SERVICE-A
   datasource:
     url: jdbc:mysql://sql12.freesqldatabase.com:3306/sql12779122
     username: sql12779122

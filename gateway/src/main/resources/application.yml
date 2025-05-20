@@ -7,14 +7,14 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: main
-          uri: lb://USER-SERVICE
+        - id: serviceA
+          uri: lb://SERVICE-A
           predicates:
-            - Path=/users/**
-        - id: order-service
-          uri: lb://ORDER-SERVICE
+            - Path=/serviceA/**
+        - id: serviceB
+          uri: lb://SERVICE-B
           predicates:
-            - Path=/orders/**
+            - Path=/serviceB/**
 
 
 eureka:
