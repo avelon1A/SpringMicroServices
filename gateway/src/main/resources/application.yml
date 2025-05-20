@@ -12,10 +12,15 @@ spring:
           uri: lb://SERVICE-A
           predicates:
             - Path=/serviceA/**
+          filters:
+            - StripPrefix=1
+
         - id: serviceB
           uri: lb://SERVICE-B
           predicates:
             - Path=/serviceB/**
+          filters:
+            - StripPrefix=1
 
       discovery:
         locator:
