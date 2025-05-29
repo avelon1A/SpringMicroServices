@@ -18,7 +18,7 @@ public class ProductClientService {
         this.restTemplate = restTemplate;
     }
     public List<Product> getProducts() {
-        String url = "http://192.168.3.63:8048/serviceA/products";
+        String url = "http://serviceA/products";
 
         ResponseEntity<List<Product>> response = restTemplate.exchange(
                 url,

@@ -2,7 +2,7 @@ spring:
   config:
     import: "configserver:"
   application:
-    name: service2
+    name: serviceB
   profiles:
     active: dev
   cloud:
