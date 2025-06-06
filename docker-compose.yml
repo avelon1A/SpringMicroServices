@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  config-server:
+    build: ./config-server
+    ports:
+      - "8888:8888"
+    networks:
+      - microservice-net
+
+  eureka-server:
+    build: ./eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - microservice-net
+    depends_on:
+      - config-server
+
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8080:8080"
+    networks:
+      - microservice-net
+    depends_on:
+      - eureka-server
+      - user-management
+      - movie-service
+
+  user-management:
+    build: ./user-management
+    ports:
+      - "9001:9001"
+    networks:
+      - microservice-net
+    depends_on:
+      - eureka-server
+
+  movie-service:
+    build: ./movie-service
+    ports:
+      - "9002:9002"
+    networks:
+      - microservice-net
+    depends_on:
+      - eureka-server
+
+networks:
+  microservice-net:
+    driver: bridge
